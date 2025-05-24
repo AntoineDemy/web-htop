@@ -22,7 +22,8 @@ This project uses a Python Flask backend to gather system stats with `psutil` an
 - Python 3.x
 - Flask
 - psutil
-- ```bash pip install flask psutil
+    ```bash
+    pip install flask psutil
 
 ---
 
