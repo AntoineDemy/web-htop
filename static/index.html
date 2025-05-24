@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Server Monitor</title>
+  <script>
+    async function fetchData() {
+      const res = await fetch('/api/system');
+      const data = await res.json();
+      document.getElementById('cpu').innerText = JSON.stringify(data.cpu_percent, null, 2);
+      document.getElementById('mem').innerText = JSON.stringify(data.memory, null, 2);
+    }
+
+    setInterval(fetchData, 2000);
+    window.onload = fetchData;
+  </script>
+</head>
+<body>
+  <h1>Server Monitor</h1>
+  <h2>CPU Usage</h2>
+  <pre id="cpu">Loading...</pre>
+  <h2>Memory Usage</h2>
+  <pre id="mem">Loading...</pre>
+</body>
+</html>
